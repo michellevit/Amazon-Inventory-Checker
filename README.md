@@ -23,7 +23,7 @@ This program only uses the data from 2 columns: the product and it's requested q
 ### Dependencies
 
 1. Windows 10 (no other operating system tested)
-2. Python library must be installed
+2. Python 3.10.4 must be installed
 3. openpyxl library must be installed
 
 ## Instructions / Executing the Program
