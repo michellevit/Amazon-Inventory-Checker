@@ -4,11 +4,6 @@
 
 April 2, 2022
 
-### Assumptions Made
-
-1. The input data should not be modified
-2. There are less than 1000 rows of data
-
 ### Description
 
 Each week, Amazon sends it's vendors an excel sheet which provides details on the orders it is requesting for that week.
@@ -19,6 +14,7 @@ This program only uses the data from 2 columns: the product and it's requested q
 ### Assumptions Made
 
 1. The input data should not be modified
+2. There are less than 1000 rows of data
 
 ### Dependencies
 
