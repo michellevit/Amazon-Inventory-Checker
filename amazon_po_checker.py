@@ -9,7 +9,7 @@ import os
 from datetime import date
 from string import ascii_lowercase
 
-
+#sanity check
 
 # Check if AMAZON US .xlsx file exists
 ## If true, open first sheet
