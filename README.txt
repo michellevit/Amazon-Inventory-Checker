@@ -25,11 +25,11 @@ This script is intended to automate the Amazon Vendor Central order confirmation
 
 Amazon Vendor Central is a website that deals with vendors selling bulk items to Amazon. Each week Amazon sends vendors an excel sheet with all of the items they are requesting to purchase, and the orders are then confirmed or cancelled by the vendor, then shipped to fulfillment centers accross North America.
 
-This script was made for a vendor who has 2 conditions for acception orders: 
+This script was made for a vendor who has 2 conditions for accepting orders: 
 1) The order is over $380 (if not, it is not worth accepting due to the shipping costs)
 2) There is enough inventory
 
-There are 2 python scripts - the first script intakes the weekly excel sheet, checks which orders are over $380, then outputs the inventory for each of the remaining orders. It also creates a new excel sheet with all the purchase orders that fulfill the first condition, and a separate sheet with all the requested inventory for each item.
+There are 2 python scripts - the first script intakes the weekly excel sheet, checks which orders are over $380, then outputs the inventory for each of the remaining orders. It also creates a new excel sheet with all the purchase orders that fulfill the first condition, and a separate sheet with the requested inventory for each item.
 
 The second part of the script is employed if there is not enough inventory to complete the orders (which have passed the first condition). In this case, the user can open the newly created spreadsheet and enter the actual quantity of inventory that is available for each item. Then the user can run the second script, and the script will calculate which orders to cancel and output the results. In some cases there will be orders that can only be partially fulfilled, and this will be reflected in the new spreadsheet's final result. 
 
