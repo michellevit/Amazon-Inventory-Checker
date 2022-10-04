@@ -17,7 +17,7 @@ Table of Contents:
 ----------
 1. Project Summary: 
 
-This script is intended to automate the Amazon Vendor Central order confirmation process - it creates a concise requested inventory summary, with which the user can input the actual available inventory and instantly generate the final report needed for upload. This automation saves 5-20 minutes weekly and limits the potential for user error by decreasing the amount of manual data entry.
+This script automates the Amazon Vendor Central order confirmation process - it creates a concise requested inventory summary, with which the user can input the actual available inventory and instantly generate the final report needed for upload. This automation saves 5-20 minutes weekly and limits the potential for user error by decreasing the amount of manual data entry.
 
 
 ----------
