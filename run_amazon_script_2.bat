@@ -1,5 +1,5 @@
 @echo off
 
-python "C:\Users\Michelle Flandin\Documents\Amazon_Program\amazon_script_2.py"
+python "C:\Users\Michelle\Documents\Coding_Projects\pythonProjects\Amazon_Program\Amazon-Inventory-Checker\amazon_script_2.py"
 
 pause
