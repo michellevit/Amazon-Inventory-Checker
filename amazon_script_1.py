@@ -315,18 +315,20 @@ def populate_inventory_sheet(inventory_sheet, inventory_dicts):
         # Add Model Number
         model_number = list(sorted_inventory_requested_dict.keys())[i]
         inventory_sheet.cell(row=i + 2, column=1).value = model_number
-        # Add 'Number of Units: Requested by Amazon'
+        # Add 'Number of Units: Requested by Amazon' (COLUMN B)
         inventory_sheet.cell(row=i + 2, column=2).value = inventory_requested_dict[
             model_number
         ]
-        # Add 'Number of Units: from POs > min value'
-        inventory_sheet.cell(row=i + 2, column=3).value = inventory_over_min_dict[
-            model_number
-        ]
-        # Add 'Number of Units: In Stock'
-        inventory_sheet.cell(row=i + 2, column=4).value = inventory_over_min_dict[
-            model_number
-        ]
+        # Add 'Number of Units: from POs > min value' (COLUMN C)
+        if model_number not in inventory_over_min_dict.keys():
+            inventory_sheet.cell(row=i + 2, column=3).value = 0
+        else: 
+            inventory_sheet.cell(row=i + 2, column=3).value = inventory_over_min_dict[model_number]
+        # Add 'Number of Units: In Stock' (COLUMN D)
+        if model_number not in inventory_over_min_dict.keys():
+            inventory_sheet.cell(row=i + 2, column=4).value = 0
+        else: 
+            inventory_sheet.cell(row=i + 2, column=4).value = inventory_over_min_dict[model_number]
     # Format new values
     for row in inventory_sheet.iter_cols(
         min_row=2, max_row=inventory_sheet.max_row, min_col=4, max_col=4
