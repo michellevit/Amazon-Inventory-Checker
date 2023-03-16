@@ -81,7 +81,7 @@ Incorrect result: this program will remove 1 unit of X from Order B, causing Ord
 
 -the excel file created, after running the first .bat file, must be closed before running the second .bat file
 -the second .bat file cannot be run before the first
--the Amazon Vendor Download files must be saved as .xlsx (they come as .xls, which openpyxl does not accept)
+-the Amazon Vendor Download files are originally type 'Excel 97-2003 Workbook (*.xls), but they must be resave as type 'Excel Workbook (*.xlsx)' (and NOT as type 'Strict Open XML Spreadhseet (*.xlsx)')
 -Ensure the Amazon Vendor Download files have been downloaded to the correct folder
 
 ----------
