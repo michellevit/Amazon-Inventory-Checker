@@ -62,16 +62,18 @@ Incorrect result: this program will remove 1 unit of X from Order B, causing Ord
   - Search for 'Environment Variables' in Windows Search and select "Edit the system environment variables".
   - In the System Properties window, click on "Environment Variables".
   - Under "System variables", scroll and find the 'Path' variable, then select "Edit".
-  - If the path to Python is not listed, add it. This will typically be something like `C:\Users\Michelle\AppData\Local\Programs\Python\Python39\` (adjust the path according to your Python version and installation location).
+  - If the path to Python is not listed, add it. This will typically be something like:
+    - `C:\Users\Michelle\AppData\Local\Programs\Python\Python39\` 
+    - *Note: adjust the path according to your Python version and installation location
   - You will likely need to restart your system after adding Python to the env variables
 - Create a virtual environment
   - Navigate to C;\Users\*Username*\.virtualenvs
-  - In the terminal - run: python -m venv Amazon-Checker-Virtual-Env
+  - In the terminal, run `python -m venv Amazon-Checker-Virtual-Env`
 - Activate the virtual environment
-  - In the terminal - run: C:\Users\*Username*\.virtualenvs\Amazon-Checker-Virtual-Env\Scripts\Activate.ps1
+  - In the terminal, run `C:\Users\*Username*\.virtualenvs\Amazon-Checker-Virtual-Env\Scripts\Activate.ps1`
 - Download openpyxl to the virtual environment: 
-  - In the terminal (with the virtual env active) - run: pip install openpyxl
-  - Check to see if it was installed - run: pip show openpyxl
+  - In the terminal (with the virtual env active), run `pip install openpyxl`
+  - Check to see if it was installed, run `pip show openpyxl`
 - Update the 'run_amazon_script_1' file:
   - Update the 'call' line in the 'run_amazon_script_1' file with folder location of the virtual environment
   - Update the 'python' line in the 'run_amazon_script_1' file with folder location of the project you just cloned from GitHub
