@@ -1,7 +1,7 @@
 # Amazon Inventory Checker
 
-![Python](https://img.shields.io/badge/python-3.10-blue.svg)
-![openpyxl](https://img.shields.io/badge/openpyxl-3.0.9-green.svg)
+![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
+![openpyxl](https://img.shields.io/badge/OpenPyXL-3.0.9-green.svg)
 
 A script which intakes Amazon's weekly order requests, and output the total inventory requested. If the total inventory requested is not available, the user can input their actual inventory and their minimum order value, and then the script will cancel units from orders selectively in order to maximize the total profit.
 
