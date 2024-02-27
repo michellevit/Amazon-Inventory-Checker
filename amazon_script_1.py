@@ -10,7 +10,7 @@ import operator
 
 
 # GLOBAL VARIABLE
-min_po_value = 100
+min_po_value = 380
 
 
 def pos_to_confirm():
