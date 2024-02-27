@@ -10,7 +10,7 @@ import operator
 
 
 # GLOBAL VARIABLE
-min_po_value = 380
+min_po_value = 100
 
 
 def pos_to_confirm():
@@ -45,16 +45,16 @@ def pos_to_confirm():
     po_heading_title = (
         "---------------\nAmazon: POs to Confirm/Cancel (unconfirmed)\n---------------"
     )
-    print_pos_to_confirm(
-        sorted_po_list, cad_po_list, orders_to_cancel_list, po_heading_title
-    )
+    # print_pos_to_confirm(
+    #     sorted_po_list, cad_po_list, orders_to_cancel_list, po_heading_title
+    # )
     # Create inventory dicts to track inventory in stock (2nd sheet)
     inventory_dicts = create_inventory_tracker_dicts(
         raw_data_sheet, orders_to_cancel_list
     )
     # Print the inventory requested to the console
     inv_heading_title = "---------------\nAmazon: Inventory Requested (from non-cancelled POs - unconfirmed)\n---------------"
-    print_inventory_to_confirm(inventory_dicts, inv_heading_title)
+    # print_inventory_to_confirm(inventory_dicts, inv_heading_title)
     # Create a new sheet for the 'Inv to Confirm' and populate it
     inventory_sheet = create_inventory_sheet(new_wb)
     populate_inventory_sheet(inventory_sheet, inventory_dicts)
@@ -157,7 +157,7 @@ def get_and_sort_po_values(raw_data_sheet):
 def create_list_pos_to_cancel(sorted_po_list):
     orders_to_cancel_list = []
     for key, value in sorted_po_list:
-        if (value <= min_po_value) and (key not in orders_to_cancel_list):
+        if (value < min_po_value) and (key not in orders_to_cancel_list):
             orders_to_cancel_list.append(key)
     return orders_to_cancel_list
 
@@ -247,17 +247,20 @@ def print_inventory_to_confirm(inventory_dicts, inv_heading_title):
     inventory_over_min_dict = inventory_dicts[1]
     print(inv_heading_title)
     longest_product_name = 0
+    for key in inventory_over_min_dict.keys():
+        if key is not None and len(key) > longest_product_name:
+            longest_product_name = len(key)
+    def custom_sort(item):
+        key, value = item
+        return (value is None, value)
     sorted_inventory_over_min_dict = dict(
         sorted(
-            inventory_over_min_dict.items(), key=operator.itemgetter(1), reverse=True
+            inventory_over_min_dict.items(), key=custom_sort, reverse=True
         )
     )
-    for key in inventory_over_min_dict.keys():
-        product = key
-        if len(product) > longest_product_name:
-            longest_product_name = len(product)
+
     for key, value in sorted_inventory_over_min_dict.items():
-        if value != 0:
+        if key is not None and value != 0:
             product = key
             spaces_needed = longest_product_name - len(product)
             extra_space = ""
@@ -306,9 +309,12 @@ def populate_inventory_sheet(inventory_sheet, inventory_dicts):
     inventory_over_min_dict = inventory_dicts[1]
     # inventory_cancelled_dict = inventory_dicts[2]
     # Sort inventory requested dict
+    def custom_sort(item):
+        key, value = item
+        return (value is None, value)
     sorted_inventory_requested_dict = dict(
         sorted(
-            inventory_requested_dict.items(), key=operator.itemgetter(1), reverse=True
+            inventory_requested_dict.items(), key=custom_sort, reverse=True
         )
     )
     # Populate cells

@@ -1,5 +1,7 @@
 @echo off
 
-python "C:\Users\Michelle\Documents\Coding_Projects\pythonProjects\Amazon_Program\Amazon-Inventory-Checker\amazon_script_2.py"
+call C:\Users\Michelle\.virtualenvs\Amazon-Checker-Virtual-Env\Scripts\activate
+python "C:\Users\Michelle\Documents\Coding_Projects\Amazon-Inventory-Checker\amazon_script_2.py"
 
 pause
+@REM exit

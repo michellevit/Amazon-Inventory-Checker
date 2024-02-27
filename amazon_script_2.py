@@ -254,9 +254,7 @@ def update_pos_to_confirm_sheet(raw_data_sheet, pos_to_confirm_sheet):
                         row[2].font = Font(color="FF0000")
 
 
-# Save the workbook
-def save_new_wb(new_wb, pos_to_confirm_filename):
-    new_wb.save(pos_to_confirm_filename)
+
 
 
 # Create dict of pos with dict inside of po line items
@@ -347,7 +345,15 @@ def update_vendor_download_sheet(file, po_dict):
             row[18].value = "OS - Cancelled: Out of stock"
         # Update 'Condition' to "Confirmed"
         row[23].value = "Confirmed"
-        wb.save(filename=file)
+        wb.save(filename=file
+                )
+
+
+
+# Save the workbook
+def save_new_wb(new_wb, pos_to_confirm_filename):
+    new_wb.save(pos_to_confirm_filename)
+
 
 
 main()
