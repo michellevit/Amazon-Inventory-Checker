@@ -30,7 +30,7 @@ A script which intakes Amazon's weekly order requests, and output the total inve
 Amazon Vendor Central is a website that deals with vendors selling bulk items to Amazon. Each week Amazon sends vendors an excel sheet with all of the items they are requesting to purchase, and the orders are then confirmed or cancelled by the vendor, then shipped to fulfillment centers accross North America.
 
 #### Who Was This Script Made For?
-This script was made for a vendor who has 2 conditions for acception orders: 
+This script was made for a vendor who has 2 conditions for accepting orders: 
 1) The order is over $380 (if not, it is not worth accepting due to the shipping costs)
 2) There is enough inventory
 
