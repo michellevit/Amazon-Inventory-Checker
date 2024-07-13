@@ -1,11 +1,13 @@
 # Amazon Inventory Checker
 
+[NOTE: New version with Tkinter GUI (in progress)](https://github.com/michellevit/Amazon-Inventory-Checker-App)
+
+
 ![Python](https://img.shields.io/badge/Python-3.10-f7dd68.svg)
 ![openpyxl](https://img.shields.io/badge/OpenPyXL-3.0.9-206e47.svg)
 
 A script which intakes Amazon's weekly order requests, and output the total inventory requested. If the total inventory requested is not available, the user can input their actual inventory and their minimum order value, and then the script will cancel units from orders selectively in order to maximize the total profit.
 
-* [New version with Tkinter GUI (in progress)](https://github.com/michellevit/Amazon-Inventory-Checker-App)
 
 <a href="https://youtu.be/lD-wTry930w?si=mQKalJ-FNDY_Rot3" target="_blank"><img src="https://img.shields.io/badge/YouTube-Demo-red?style=for-the-badge&logo=youtube&color=FF0000"></a>
 
