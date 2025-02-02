@@ -1,6 +1,6 @@
 # Amazon Inventory Checker
 
-[NOTE: New version with Tkinter GUI (in progress)](https://github.com/michellevit/Amazon-Inventory-Checker-App)
+[NOTE: New version with Tkinter GUI](https://github.com/michellevit/Amazon-Inventory-Checker-App)
 
 
 ![Python](https://img.shields.io/badge/Python-3.10-f7dd68.svg)
